@@ -58,8 +58,8 @@ public class MaksukorttiTest {
         assertEquals("Kortilla on rahaa 2.0 euroa", kortti.toString());
     }
     
-    //Danielan lisäämä
     @Test
+    //maukkaan lounaan syöminen ei vie saldoa negatiiviseksi
     public void syoMaukkaastiEiVieSaldoaNegatiiviseksi() {
         kortti.syoMaukkaasti();
         kortti.syoMaukkaasti();
@@ -68,8 +68,8 @@ public class MaksukorttiTest {
         assertEquals("Kortilla on rahaa 2.0 euroa", kortti.toString());    
     }
     
-    //Danielan lisäämä
     @Test
+    //kortilla pystyy ostamaan edullisen lounaan, kun kortilla rahaa vain edullisen lounaan verran (eli 2.5e)
     public void syoEdullisestiOnnistuuKunRahaaJuuriRiittavasti() {
         kortti.syoEdullisesti();
         kortti.syoEdullisesti();
@@ -79,8 +79,8 @@ public class MaksukorttiTest {
         assertEquals("Kortilla on rahaa 0.0 euroa", kortti.toString());
     }
     
-    //Danielan lisäämä
     @Test
+    //kortilla pystyy ostamaan maukkaan lounaan, kun kortilla rahaa vain maukkaan lounaan verran (eli 4e)
     public void syoMaukkaastiOnnistuuKunRahaaJuuriRiittavasti() {
         kortti.syoMaukkaasti(); //kortilla 6
         kortti.syoMaukkaasti(); //kortilla 2
@@ -100,9 +100,9 @@ public class MaksukorttiTest {
         kortti.lataaRahaa(200);
         assertEquals("Kortilla on rahaa 150.0 euroa", kortti.toString());   
     }
-    
-    //Danielan lisäämä
+   
     @Test
+    //negatiivisen summan lataaminen ei muuta kortin saldoa
     public void kortinSaldoEiMuutuNegatiivisillaLuvuilla() {
         kortti.lataaRahaa(-10);
         assertEquals("Kortilla on rahaa 10.0 euroa", kortti.toString());
