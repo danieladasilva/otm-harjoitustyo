@@ -2,7 +2,7 @@
 
 tekstiä
 
-## **Sovelluksen tarkoitus** ##
+**Sovelluksen tarkoitus**
 
 ## Käyttäjät ##
 
