@@ -1,10 +1,10 @@
-# Vaatimusmäärittely #
+## Vaatimusmäärittely ##
 
 
-### Sovelluksen tarkoitus ####
+#### Sovelluksen tarkoitus ####
 
-### Käyttäjät ##
+#### Käyttäjät ##
 
-### Suunnitellut toiminnallisuudet ##
+#### Suunnitellut toiminnallisuudet ##
 
-### Käyttöliittymäluonnos ##
+#### Käyttöliittymäluonnos ##
