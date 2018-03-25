@@ -1,62 +1,104 @@
-commit 001316892d605867391056c49bd2fd55acfe7e7f
+danieladasilva@DESKTOP-U8JOND3:/mnt/c/Users/Daniela/Documents/OTM/otm_viikko1$ git log --stat | cat
+commit 444936fa3f81e05243233c61dc243e14b15e28ae
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 19:05:12 2018 +0200
+Date:   Mon Mar 26 00:46:19 2018 +0300
 
-    muutokset komennolla git add -p
+    poistettu file1 ja muutettu file2 nimeksi file22
 
- eka.txt    | 3 ++-
- kolmas.txt | 3 ++-
- 2 files changed, 4 insertions(+), 2 deletions(-)
+ tiedostoja/file1  | 6 ------
+ tiedostoja/file2  | 0
+ tiedostoja/file22 | 0
+ 3 files changed, 6 deletions(-)
 
-commit a3a10348f2cf159a237753ba12d7fb7e8cf9e327
+commit 030ad9e3ea80aaa132e6376b5afe2be6a0476012
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 18:53:02 2018 +0200
+Date:   Mon Mar 26 00:43:16 2018 +0300
 
-    uudelleennimentä + vahinkojen korjausta
+    lisättiin vahingossa poistettu file2
 
- eka.txt      | 3 +++
- tiedosto.txt | 5 -----
- 2 files changed, 3 insertions(+), 5 deletions(-)
+ tiedostoja/file2 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
 
-commit d4a95798c4c80cc8e6b82cf3105324d107e8a4cb
+commit a0ab1434c3d811e9c7ab3db797f89b16b33eebe6
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 18:45:09 2018 +0200
+Date:   Mon Mar 26 00:42:03 2018 +0300
+
+    muokattu file1 ja poistettu file2
+
+ tiedostoja/file1 | 6 ++++++
+ tiedostoja/file2 | 0
+ 2 files changed, 6 insertions(+)
+
+commit 94328e83972942c942e2e58057f221a6713b0122
+Author: Daniela <dasilva.daniela@outlook.com>
+Date:   Mon Mar 26 00:39:43 2018 +0300
+
+    lisätty hakemisto tiedostoja ja tieodostot file2, file2 ja file3
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f165839567a6f70cc0903d6e956d87c441ffa66a
+Author: Daniela <dasilva.daniela@outlook.com>
+Date:   Mon Mar 26 00:33:45 2018 +0300
+
+    muutoksia eka.txt ja kolmas.txt
+
+ eka.txt    | 5 +++--
+ kolmas.txt | 5 ++++-
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit b4b4d2133387314d6bb78689ccabc18abb3b0d6a
+Author: Daniela <dasilva.daniela@outlook.com>
+Date:   Mon Mar 26 00:31:10 2018 +0300
+
+    tiedosto.txt nimetty eka.txt
+
+ eka.txt      | 11 +++++++++++
+ tiedosto.txt | 11 -----------
+ 2 files changed, 11 insertions(+), 11 deletions(-)
+
+commit b0f58c1a36f2022f692dc28257885ff7fb3e1acb
+Author: Daniela <dasilva.daniela@outlook.com>
+Date:   Mon Mar 26 00:29:53 2018 +0300
 
     poistettu toinen.txt
 
  toinen.txt | 1 -
  1 file changed, 1 deletion(-)
 
-commit d6319fa6a4b91dffab431b3310ee93e7c22f3b9b
+commit df9a1ac4089d79857602757097ee1e72df94977a
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 18:42:18 2018 +0200
+Date:   Mon Mar 26 00:26:58 2018 +0300
 
-    poistettu ja lisätty tekstiä tiedosto.txt
+    poistettu ja lisätty tekstiä tiedostosta tiedosto.txt
 
- tiedosto.txt | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ tiedosto.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-commit 1eac27e85be1beac5680174f6c1af7cc1ec9d3ab
+commit 4d74811b54a94fd24aba555486011aceed216aa9
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 18:38:57 2018 +0200
+Date:   Mon Mar 26 00:25:19 2018 +0300
 
-    lisätty tekstiä tiedosto.txt
+    lisättiin tiedosto.txt paljon tekstiä
 
- tiedosto.txt | 5 +++++
- 1 file changed, 5 insertions(+)
+ tiedosto.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-commit 2f7c693a3630e7208353fc93d1fd2a9ec3e8c4a0
+commit 827b6473bd5f52e2205702ff69f18527cc3447d6
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 18:08:36 2018 +0200
+Date:   Mon Mar 26 00:20:34 2018 +0300
 
-    luotu stuff ja neljäs.txt
+    luotu hakemisto stuff ja sen sisälle jokintiedosto.txt
 
- "stuff/nelj\303\244s.txt" | 0
+ stuff/jokintiedosto.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
 
-commit c63d994ef1ef7652348ed53d52527ba633c2a101
+commit b0988d94862a3c7b8edde57414dbb33133b734d7
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 17:56:32 2018 +0200
+Date:   Mon Mar 26 00:18:35 2018 +0300
 
     muutokset toinen.txt ja kolmas.txt
 
@@ -64,32 +106,30 @@ Date:   Sun Mar 18 17:56:32 2018 +0200
  toinen.txt | 1 +
  2 files changed, 2 insertions(+)
 
-commit f8e06da1e25a32558550e39661c2d7518cd8e63d
+commit 5f73113320c5a3d3b6a73b63fb78e57debf122c3
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 17:52:14 2018 +0200
+Date:   Mon Mar 26 00:17:12 2018 +0300
 
-    lisätty kolmas.txt
+    kolmas.txt lisätty
 
  kolmas.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
 
-commit 62b9313dc2d88a25e788b6176a1422d2ee9143a3
+commit 1ec4801de4df61b6782d393cc3a06f583fbdd6ea
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 17:48:31 2018 +0200
+Date:   Mon Mar 26 00:15:24 2018 +0300
 
     muutos ja lisäys
 
- tiedosto.txt | 2 ++
+ tiedosto.txt | 1 +
  toinen.txt   | 0
- 2 files changed, 2 insertions(+)
+ 2 files changed, 1 insertion(+)
 
-commit b51844daf006031d3adb3eea76dcaa0cf80c6d33
+commit 631e45e1fa50f1a441a05fb52751cd2fcb8ff766
 Author: Daniela <dasilva.daniela@outlook.com>
-Date:   Sun Mar 18 17:19:50 2018 +0200
+Date:   Mon Mar 26 00:13:32 2018 +0300
 
-    tiedosto.txt luotu
+    tiedosto.txt lisätty
 
  tiedosto.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
-
-muutos
