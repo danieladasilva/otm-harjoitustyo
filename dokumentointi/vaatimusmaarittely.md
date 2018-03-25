@@ -4,8 +4,8 @@ tekstiä
 
 ## **Sovelluksen tarkoitus** ##
 
-#### Käyttäjät ####
+## Käyttäjät ##
 
-#### Suunnitellut toiminnallisuudet ####
+## Suunnitellut toiminnallisuudet ##
 
-#### Käyttöliittymäluonnos ####
+## Käyttöliittymäluonnos ##
