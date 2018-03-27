@@ -8,4 +8,4 @@ Tämä on README-tiedosto kurssilla *Ohjelmistotekniikan menetelmät* tehtäväl
 
 [vaatimusmaarittely.md](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
-[tyoaikakirjanpito](https://github.com/danieladasilva/otm-harjoitustyo/tree/master/dokumentointi)
+[tyoaikakirjanpito](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
