@@ -70,7 +70,7 @@ public class KassapaateTest {
     }
     
     @Test
-    ////jos maksu riittävä: kassassa oleva rahamäärä kasvaa lounaan hinnalla ja vaihtorahan suuruus on oikea
+    //jos maksu riittävä: kassassa oleva rahamäärä kasvaa lounaan hinnalla ja vaihtorahan suuruus on oikea
     public void syoMaukkaastiKateisostoKasvattaaRahaaKassassaVaihtorahaOk() {
         kassapaate.syoMaukkaasti(400);
         assertEquals(100400, kassapaate.kassassaRahaa());
@@ -217,10 +217,5 @@ public class KassapaateTest {
         assertEquals(1000, kortti.saldo());
         assertEquals(100000, kassapaate.kassassaRahaa());
     }
-    
-    
-    
-//    RAMI! Jos oon testannu kortin toimintaa jo luokassa MaksukorttiTest
-//            niin tarviiko sitä testata enää täällä?
     
 }
