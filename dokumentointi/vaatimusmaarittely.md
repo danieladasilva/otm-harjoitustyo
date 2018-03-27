@@ -7,6 +7,8 @@ Brick Breaker Game (yksinkertainen versio) on peli, jossa pelaajan tarkoituksena
 
 #### Käyttäjät ##
 
+Sovellus sisältää ainoastaan yhden käyttätyypin, normaalin käyttäjän.
+
 #### Suunnitellut toiminnallisuudet ##
 
 #### Käyttöliittymäluonnos ##
