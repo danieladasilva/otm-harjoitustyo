@@ -13,7 +13,7 @@ Sovellus sisältää ainoastaan yhden käyttäjätyypin eli pelaajan.
 
 - pääikkuna sisältää painikkeet ainakin pelin käynnistämiseen sekä tilastotietojen katsomiseen
 - sovellus pitää kirjaa joistakin tilastotiedoista (esim. pelattujen pelien lukumäärä, paras pistemäärä/aika, pelaajien nimimerkit)
-- peli-ikkuna sisältää itse pelitoteutuksen lisäksi pistetilanteen
+- peli-ikkuna sisältää itse pelitoteutuksen lisäksi pistetilanteen/peliajan
 - pelin päättyessä voittoon avautuu voittoikkuna pistetilastoineen
 - pelin päättyessä häviöön avautuu häviöikkuna pistetilastoineen
 - pelaajille mahdollisuus nimimerkkiin??
