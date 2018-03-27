@@ -16,7 +16,7 @@ Sovellus sisältää ainoastaan yhden käyttäjätyypin eli pelaajan.
 - peli-ikkuna sisältää itse pelitoteutuksen lisäksi pistetilanteen/peliajan
 - pelin päättyessä voittoon avautuu voittoikkuna pistetilastoineen
 - pelin päättyessä häviöön avautuu häviöikkuna pistetilastoineen
-- pelaajille mahdollisuus nimimerkkiin??
+- pelaajille mahdollisuus nimimerkkiin/kirjautuminen sisään?
 
 
 #### Käyttöliittymäluonnos ##
