@@ -1,6 +1,8 @@
-**otm-harjoitustyö**
+# Brick Breaker Game
 
 Tämä on README-tiedosto kurssilla *Ohjelmistotekniikan menetelmät* tehtävälle harjoitustyölle..
+
+## Dokumentaatio
 
 [komentorivi.txt](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
