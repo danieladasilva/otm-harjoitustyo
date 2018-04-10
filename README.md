@@ -4,9 +4,9 @@ Tämä on README-tiedosto kurssilla *Ohjelmistotekniikan menetelmät* tehtäväl
 
 ## Dokumentaatio
 
-[vaatimusmaarittely.md](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
+[vaatimusmaarittely](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
-[tyoaikakirjanpito.md](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+[tyoaikakirjanpito](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
 
 ## Komentorivitoiminnot
