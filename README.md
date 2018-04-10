@@ -15,16 +15,13 @@ Tämä on README-tiedosto kurssilla *Ohjelmistotekniikan menetelmät* tehtäväl
 
 ## Komentorivitoiminnot
 
-ohjelma käynnistetään komennolla
-```
-komento
-```
+**Testaus**
 
-testit suoritetaan komennolla
+Testit suoritetaan komennolla
 ```
 mvn test
 ```
-testikattavuusraportti luodaan komennolla
+Testikattavuusraportti luodaan komennolla
 ```
 mvn test jacoco:report
 ```
