@@ -15,7 +15,7 @@ Tämä on README-tiedosto kurssilla *Ohjelmistotekniikan menetelmät* tehtäväl
 
 ## Komentorivitoiminnot
 
-**Testaus**
+***Testaus***
 
 Testit suoritetaan komennolla
 ```
