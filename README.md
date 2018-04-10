@@ -6,7 +6,7 @@ Tämä on README-tiedosto kurssilla *Ohjelmistotekniikan menetelmät* tehtäväl
 
 [vaatimusmaarittely.md](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
-[tyoaikakirjanpito](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+[tyoaikakirjanpito.md](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
 
 ## Komentorivitoiminnot
