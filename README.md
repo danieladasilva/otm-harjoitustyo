@@ -19,3 +19,7 @@ testit suoritetaan komennolla
 ```
 mvn test
 ```
+testikattavuusraportti luodaan komennolla
+```
+mvn test jacoco:report
+```
