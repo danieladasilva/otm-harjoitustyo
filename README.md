@@ -15,6 +15,11 @@ Tämä on README-tiedosto kurssilla *Ohjelmistotekniikan menetelmät* tehtäväl
 
 ## Komentorivitoiminnot
 
+ohjelma käynnistetään komennolla
+```
+komento
+```
+
 testit suoritetaan komennolla
 ```
 mvn test
