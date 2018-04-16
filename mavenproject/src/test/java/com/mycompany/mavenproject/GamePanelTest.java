@@ -21,7 +21,7 @@ public class GamePanelTest {
     @Test
     public void moveRightFunctionsCorrectly() {
         gp.moveRight();
-        assertEquals(360, gp.getPaddleX());
+        assertEquals(370, gp.getPaddleX());
         gp.setPaddleX(595);
         gp.moveRight();
         assertEquals(600, gp.getPaddleX());
@@ -30,7 +30,7 @@ public class GamePanelTest {
     @Test
     public void moveLeftFunctionsCorrectly() {
         gp.moveLeft();
-        assertEquals(340, gp.getPaddleX());
+        assertEquals(330, gp.getPaddleX());
         gp.setPaddleX(5);
         gp.moveLeft();
         assertEquals(0, gp.getPaddleX());
