@@ -9,4 +9,5 @@ ti 27.3. | 12 - 13, 15 - 17 | 3 | viikko 2: harjoitustyö | töissä, pajassa
 ma 9.4. | 12 - 16, 17 - 22 | 9 | viikko 3: koodauksen aloitus: toiminnallisuuksia, testejä | kotona 
 ti 10.4. | 12:30 - 13, 15 - 18, 20 - 21 | 4.5 | viikko 3: | töissä, pajassa
 su 15.4. | 17:30 - 20 | 3.5 | viikko 3: | kotona
+ma 16.4. | 17 - 23 | 6 | viikko 3: mm. testejä, checkstyle | kotona
 -- | - | yht. 24 h | - | -
