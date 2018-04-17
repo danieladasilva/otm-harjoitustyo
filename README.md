@@ -6,7 +6,9 @@ Brick Breaker Game on peli, jossa pelaajan tarkoituksena on rikkoa tiilistä muo
 
 [vaatimusmaarittely](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
-[tyoaikakirjanpito](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+[työaikakirjanpito](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+
+[arkkitehtuuri.md](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
 
 ## Komentorivitoiminnot
