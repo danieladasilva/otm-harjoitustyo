@@ -1,12 +1,14 @@
-package com.mycompany.mavenproject;
+package fi.Daniela.gui;
 
 
-import com.mycompany.mavenproject.GamePanel;
+import fi.Daniela.logics.GamePanel;
+import fi.Daniela.logics.GamePanel;
 import javax.swing.JFrame;
 
 public class Main {
     
     public static void main(String[] args) {
+        //käyttöliittymä
         JFrame jframe = new JFrame();
         GamePanel gamePanel = new GamePanel();
         jframe.add(gamePanel);

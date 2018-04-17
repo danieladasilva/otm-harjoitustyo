@@ -1,8 +1,8 @@
-package com.mycompany.mavenproject;
-
+package fi.Daniela.logics;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,15 +32,18 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     private Timer timer;
     private int delay = 8;
     
-    private Rectangle ball = new Rectangle(ballX, ballY, ballDiameter, ballDiameter);
-    private Rectangle paddle = new Rectangle(paddleX, paddleY, paddleWidth, paddleHeight);
+    //private Rectangle ball = new Rectangle(ballX, ballY, ballDiameter, ballDiameter);
+    //private Rectangle paddle = new Rectangle(paddleX, paddleY, paddleWidth, paddleHeight);
     
     //private int score;
     //private int numberOfBricks = 21;
     
+    private BrickwallGenerator brickwall;
+    
     //constuctor(s)
     
     public GamePanel() { 
+        brickwall = new BrickwallGenerator(4, 8);
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
@@ -56,6 +59,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         g.setColor(Color.black);
         //g.fillRect(1, 1, 700, 600);
         g.fillRect(1, 1, 692, 592);
+        
+        brickwall.draw((Graphics2D)g);
        
         //borders
         g.setColor(Color.pink);
@@ -74,12 +79,14 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         
         g.dispose();
         
+        //brickwall.draw((Graphics2D)g);
+        
     }
     
     public void moveRight() {
         running = true;
         if (paddleX + 20 >= 600) {
-                paddleX = 600;
+            paddleX = 600;
         } else {
             paddleX = paddleX + 20;
         }    
@@ -87,14 +94,14 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     public void moveLeft() {
         running = true;
         if (paddleX - 20 <= 3) {
-                paddleX = 3; 
+            paddleX = 3; 
         } else {
             paddleX = paddleX - 20;
         }    
     }
 
     @Override
-    public void keyPressed(KeyEvent e){
+    public void keyPressed(KeyEvent e) {
         //running = true;
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             moveRight();
@@ -108,10 +115,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     public void actionPerformed(ActionEvent e) {
         timer.start();
         if (running) {
-            if (new Rectangle(ballX, ballY, ballDiameter, ballDiameter).intersects
-        (new Rectangle(paddleX, paddleY, paddleWidth, paddleHeight))) {
-                ballYdir = -ballYdir;
-                
+            if (new Rectangle(ballX, ballY, ballDiameter, ballDiameter).intersects(new Rectangle(paddleX, paddleY, paddleWidth, paddleHeight))) {
+                ballYdir = -ballYdir;    
             }
             ballX = ballX + ballXdir;
             ballY = ballY + ballYdir;
@@ -140,13 +145,26 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     public int getPaddleX() {
         return paddleX;
     }
+    
+    public boolean getRunning() {
+        return running;
+    }
 
     public void setBallX(int ballX) {
         this.ballX = ballX;
     }
 
+    public void setBallY(int ballY) {
+        this.ballY = ballY;
+    }
+    
+
     public void setPaddleX(int paddleX) {
         this.paddleX = paddleX;
+    }
+    
+    public void setRunning(boolean value) {
+        this.running = value;
     }
     
     
