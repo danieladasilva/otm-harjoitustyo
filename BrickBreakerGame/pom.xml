@@ -45,8 +45,6 @@
                 <configuration>
                     <excludes>
                         <exclude>fi/daniela/main/*</exclude>
-                        
-                        <exclude>fi/daniela/logics/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
