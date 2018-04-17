@@ -1,4 +1,4 @@
-package fi.Daniela.logics;
+package fi.daniela.gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -60,7 +60,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         //g.fillRect(1, 1, 700, 600);
         g.fillRect(1, 1, 692, 592);
         
-        brickwall.draw((Graphics2D)g);
+        brickwall.draw((Graphics2D) g);
        
         //borders
         g.setColor(Color.pink);

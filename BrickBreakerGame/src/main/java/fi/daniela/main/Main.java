@@ -1,8 +1,7 @@
-package fi.Daniela.gui;
+package fi.daniela.main;
 
-
-import fi.Daniela.logics.GamePanel;
-import fi.Daniela.logics.GamePanel;
+import fi.daniela.gui.GamePanel;
+import fi.daniela.gui.GamePanel;
 import javax.swing.JFrame;
 
 public class Main {

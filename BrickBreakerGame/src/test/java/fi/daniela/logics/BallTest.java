@@ -1,5 +1,5 @@
 
-package fi.Daniela.gui;
+package fi.daniela.logics;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -8,13 +8,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Daniela
- */
-public class MainTest {
+public class BallTest {
     
-    public MainTest() {
+    public BallTest() {
     }
     
     @BeforeClass
@@ -33,9 +29,5 @@ public class MainTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+
 }

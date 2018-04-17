@@ -1,7 +1,7 @@
-package fi.Daniela.logics;
+package fi.daniela.gui;
 
 
-import fi.Daniela.logics.GamePanel;
+import fi.daniela.gui.GamePanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -59,7 +59,6 @@ public class GamePanelTest {
 //        assertEquals(351, gp.getBallX());
 //        assertEquals(298, gp.getBallY());      
 //    }
-//    
     
     
     

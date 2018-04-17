@@ -1,5 +1,5 @@
 
-package fi.Daniela.logics;
+package fi.daniela.gui;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -22,8 +22,8 @@ public class BrickwallGenerator {
                 array[i][j] = 1;
             }
         }
-        this.brickWidth = 540/columns;
-        this.brickHeight = 150/rows;
+        this.brickWidth = 540 / columns;
+        this.brickHeight = 150 / rows;
     }
     
     public void draw(Graphics2D g) {
@@ -31,7 +31,7 @@ public class BrickwallGenerator {
             for (int j = 0; j < array[0].length; j++) {
                 if (array[i][j] > 0) {
                     g.setColor(Color.cyan); //tiilien väri
-                    g.fillRect(j*brickWidth + 80, i*brickHeight + 50, brickWidth, brickHeight);
+                    g.fillRect(j * brickWidth + 80, i * brickHeight + 50, brickWidth, brickHeight);
                     
                     g.setStroke(new BasicStroke(1)); //välien paksuus
                     g.setColor(Color.black); //välien väri
