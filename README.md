@@ -28,7 +28,7 @@ mvn test jacoco:report
 ```
 ### Checkstyle
 
-Tiedostoon [checkstyle.xml](https://github.com/mluukkai/OtmTodoApp/blob/master/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
+Tiedostoon [checkstylme.xml](https://github.com/danieladasilva/otm-harjoitustyo/blob/master/BrickBreakerGame/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
 
 ```
  mvn jxr:jxr checkstyle:checkstyle
