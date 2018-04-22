@@ -11,4 +11,6 @@ ti 10.4. | 12:30 - 13, 15 - 18, 20 - 21 | 4.5 | viikko 3: | töissä, pajassa
 su 15.4. | 17:30 - 20 | 3.5 | viikko 4: toiminnallisuuksia peliin | kotona
 ma 16.4. | 17 - 23 | 6 | viikko 4: mm. testejä, checkstyle | kotona
 ti 17.4. | 10 - 13, 17 - 18, 20 - 24 | 9 | viikko 4: mm. checkstyle, pakkausjutut | töissä
--- | - | yht. 33 h | - | -
+la 21.4. | 11 - 18 | 7 | viikko 5: koodin pakkausrakennetta kuntoon, testejä | kotona
+su 22.4. | 16 - 20 | 4 | viikko 5: jar-jutut | kotona
+-- | - | yht. 44 h | - | -
