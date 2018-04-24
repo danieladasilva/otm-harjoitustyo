@@ -21,36 +21,6 @@ public class GamePanelTest {
         gp = new GamePanel();
     }
     
-    @Test
-    public void moveRightFunctionsCorrectly() {
-        gp.moveRight();
-        assertEquals(370, gp.getPaddleX());
-        gp.setPaddleX(595);
-        gp.moveRight();
-        assertEquals(600, gp.getPaddleX());
-    }
-    
-    @Test
-    public void moveRightRunningValueChanges() {
-        gp.moveRight();
-        assertEquals(true, gp.getRunning());
-    }
-    
-    @Test
-    public void moveLeftRunningValueChanges() {
-        gp.moveLeft();
-        assertEquals(true, gp.getRunning());
-    }
-    
-    @Test
-    public void moveLeftFunctionsCorrectly() {
-        gp.moveLeft();
-        assertEquals(330, gp.getPaddleX());
-        gp.setPaddleX(5);
-        gp.moveLeft();
-        assertEquals(3, gp.getPaddleX());
-    }
-    
 //    @Test
 //    public void actionPerformedChangesBallXAndBallYCorrectly() {
 //        ActionEvent e = mock(ActionEvent.class);

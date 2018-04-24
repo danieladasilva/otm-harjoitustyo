@@ -1,7 +1,6 @@
 package fi.daniela.main;
 
 import fi.daniela.gui.GamePanel;
-import fi.daniela.gui.GamePanel;
 import javax.swing.JFrame;
 
 public class Main {

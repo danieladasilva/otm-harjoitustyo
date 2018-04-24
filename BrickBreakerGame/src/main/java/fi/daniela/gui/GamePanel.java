@@ -1,9 +1,14 @@
 package fi.daniela.gui;
 
+import fi.daniela.logics.Ball;
+import fi.daniela.logics.Brickwall;
+import fi.daniela.logics.Paddle;
+import fi.daniela.logics.Play;
+import fi.daniela.logics.Score;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -11,169 +16,122 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-
 public class GamePanel extends JPanel implements KeyListener, ActionListener {
-    
-    //class variables
-    
-    private boolean running = false;
-    
-    private int ballX = 350; //350
-    private int ballY = 300;
-    private int ballXdir = 1; //-1
-    private int ballYdir = -2; //-2
-    private int ballDiameter = 15;
-    
-    private int paddleX = 350;
-    private int paddleY = 550;
-    private int paddleWidth = 100;
-    private int paddleHeight = 15;
-    
+    //oliomuuttujat
     private Timer timer;
-    private int delay = 8;
+    private int delay = 8;        
     
-    //private Rectangle ball = new Rectangle(ballX, ballY, ballDiameter, ballDiameter);
-    //private Rectangle paddle = new Rectangle(paddleX, paddleY, paddleWidth, paddleHeight);
+    public Brickwall brickwall;
+    public Ball ball;
+    public Paddle paddle;
+    public Score score;
     
-    //private int score;
-    //private int numberOfBricks = 21;
-    
-    private BrickwallGenerator brickwall;
-    
-    //constuctor(s)
-    
+    //konstruktorit
     public GamePanel() { 
-        brickwall = new BrickwallGenerator(4, 8);
+        brickwall = new Brickwall(4, 8);
+        this.ball = new Ball();
+        this.paddle = new Paddle();
+        this.score = new Score();
+        timer = new Timer(8, this);
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
-        timer = new Timer(8, this);
         timer.start();
+        //KOKEILUA
+        Play.setBall(this.ball);
+        Play.setPaddle(this.paddle);
+        Play.setScore(score);
+        Play.setBrickwall(brickwall);
     }
     
-    
-    //methods 
-    
-    public void paint(Graphics g) {
+    //metodit 
+    @Override
+    public void paint(Graphics g) {     
         //background
         g.setColor(Color.black);
-        //g.fillRect(1, 1, 700, 600);
         g.fillRect(1, 1, 692, 592);
         
+        //brickwall
         brickwall.draw((Graphics2D) g);
        
         //borders
         g.setColor(Color.pink);
-        //x, y, leveys=700,korkeus=600
         g.fillRect(0, 0, 3, 592); //left 592
         g.fillRect(0, 0, 692, 3); //top
         g.fillRect(691, 0, 3, 592); //right
         
         //paddle
         g.setColor(Color.white);
-        g.fillRect(paddleX, 550, 100, 15);
+        g.fillRect(paddle.getPaddleX(), paddle.getPaddleY(), paddle.getPaddleWidth(), paddle.getPaddleHeight());
         
         //ball
         g.setColor(Color.pink);
-        g.fillOval(ballX, ballY, ballDiameter, ballDiameter);
+        g.fillOval(ball.getBallX(), ball.getBallY(), ball.getBallDiameter(), ball.getBallDiameter());
         
-        g.dispose();
+        //score
+        g.setColor(Color.white);
+        g.setFont(new Font("sans serif", Font.BOLD, 30));
+        g.drawString(Integer.toString(score.getScore()), score.getScoreX(), score.getScoreY());
         
-        //brickwall.draw((Graphics2D)g);
+        //jos pallo osuuu maahan
+        if (ball.getBallY() > 570) {
+            Play.setRunning(false);
+            g.setColor(Color.red);
+            g.drawString("GAME OVER", 200, 300);
+        }
         
+        //jos kaikki tiilet rikottu
+        if (brickwall.getNumberOfBricks() <= 0) {
+            Play.setRunning(false);
+            g.setColor(Color.green);
+            g.drawString("YOU WON", 200, 300);
+            g.drawString("Press enter to play again", 200, 300);
+        }
+        
+        g.dispose();    
     }
     
-    public void moveRight() {
-        running = true;
-        if (paddleX + 20 >= 600) {
-            paddleX = 600;
-        } else {
-            paddleX = paddleX + 20;
-        }    
-    }
-    public void moveLeft() {
-        running = true;
-        if (paddleX - 20 <= 3) {
-            paddleX = 3; 
-        } else {
-            paddleX = paddleX - 20;
-        }    
+    public void restartTheGame() {
+          brickwall = Play.restartTheGame();
+          repaint();
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        //running = true;
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            moveRight();
+            Play.setRunning(true);
+            paddle.moveRight();
         }    
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            moveLeft();
-        }    
+            Play.setRunning(true);
+            paddle.moveLeft();
+        } 
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (Play.isRunning() == false) {
+                restartTheGame();
+            }
+        }
+
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         timer.start();
-        if (running) {
-            if (new Rectangle(ballX, ballY, ballDiameter, ballDiameter).intersects(new Rectangle(paddleX, paddleY, paddleWidth, paddleHeight))) {
-                ballYdir = -ballYdir;    
-            }
-            ballX = ballX + ballXdir;
-            ballY = ballY + ballYdir;
-            if (ballX < 3) { //left border
-                ballXdir = -ballXdir; 
-            }
-            if (ballX > 690 - ballDiameter) { //right border 675 = 690 - 15
-                ballXdir = -ballXdir; 
-            }
-            if (ballY < 3) { //top border
-                ballYdir = -ballYdir;
-            }
-        }
+        Play.play();
         repaint();
     }
 
     //getterit ja setterit
-    public int getBallX() {
-        return ballX;
+    public Timer getTimer() {
+        return timer;
     }
-
-    public int getBallY() {
-        return ballY;
-    }
-
-    public int getPaddleX() {
-        return paddleX;
-    }
-    
-    public boolean getRunning() {
-        return running;
-    }
-
-    public void setBallX(int ballX) {
-        this.ballX = ballX;
-    }
-
-    public void setBallY(int ballY) {
-        this.ballY = ballY;
-    }
-    
-
-    public void setPaddleX(int paddleX) {
-        this.paddleX = paddleX;
-    }
-    
-    public void setRunning(boolean value) {
-        this.running = value;
+ 
+    public void setTimer(Timer timer) {
+        this.timer = timer;
     }
     
     
-    
-    
-    
-    
-    
-    
+    //turhia?
     @Override
     public void keyTyped(KeyEvent e) {}
     @Override

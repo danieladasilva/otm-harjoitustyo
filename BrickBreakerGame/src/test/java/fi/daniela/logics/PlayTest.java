@@ -8,12 +8,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class BrickwallTest {
+public class PlayTest {
     
-    Brickwall bw;
+    private static Ball ball;
+    private static Paddle paddle;
     
-    public BrickwallTest() {
-        this.bw = new Brickwall(4, 8);
+    public PlayTest() {
     }
     
     @Before
@@ -21,14 +21,16 @@ public class BrickwallTest {
     }
     
     @Test
-    public void setBrickValueFunctionsCorrectly() {
-        assertEquals(1, bw.getVisible()[0][0]);
-        bw.setBrickValue(0, 0, 0);
-        assertEquals(0, bw.getVisible()[0][0]);
-    }    
+    public void setBallFunctionsCorrectly() {
+        Play.setBall(ball);
+        assertEquals(ball, Play.getBall());
+    }
     
-    
-    
+    @Test
+    public void setPaddleFunctionsCorrectly() {
+        Play.setPaddle(paddle);
+        assertEquals(paddle, Play.getPaddle());
+    }
     
     
     @BeforeClass
