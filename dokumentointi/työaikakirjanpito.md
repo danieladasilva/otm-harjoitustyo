@@ -13,4 +13,5 @@ ma 16.4. | 17 - 23 | 6 | viikko 4: mm. testejä, checkstyle | kotona
 ti 17.4. | 10 - 13, 17 - 18, 20 - 24 | 9 | viikko 4: mm. checkstyle, pakkausjutut | töissä
 la 21.4. | 11 - 18 | 7 | viikko 5: koodin pakkausrakennetta kuntoon, testejä | kotona
 su 22.4. | 16 - 20 | 4 | viikko 5: jar-jutut | kotona
+ti 24.4. | 12 - 15 | 3 | viikko 5: sovelluslogiikkaa erilleen käyttäliittymästä | pajassa
 -- | - | yht. 44 h | - | -
