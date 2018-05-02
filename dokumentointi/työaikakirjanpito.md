@@ -13,5 +13,6 @@ ma 16.4. | 17 - 23 | 6 | viikko 4: mm. testejä, checkstyle | kotona
 ti 17.4. | 10 - 13, 17 - 18, 20 - 24 | 9 | viikko 4: mm. checkstyle, pakkausjutut | töissä
 la 21.4. | 11 - 18 | 7 | viikko 5: koodin pakkausrakennetta kuntoon, testejä | kotona
 su 22.4. | 16 - 20 | 4 | viikko 5: mm. jar-jutut | kotona
-ti 24.4. | 12 - 15, 21 - 22 | 4 | viikko 5: mm. sovelluslogiikkaa erilleen käyttöliittymästä | pajassa, kotona
--- | - | yht. 48 | - | -
+ti 24.4. | 12 - 15, 21 - 22 | 4 | viikko 5: mm. sovelluslogiikkaa erilleen käyttöliittymästä | pajassa, kotona 
+ti 1.5. | 12 - 18 | 6 | viikko 6: lisää koodia, pysyväistallennuksen aloitus | kotona
+-- | - | yht. 56 | - | -
