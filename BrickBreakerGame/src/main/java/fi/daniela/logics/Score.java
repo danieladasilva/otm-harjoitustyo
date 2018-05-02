@@ -1,24 +1,30 @@
 
 package fi.daniela.logics;
 
+/**
+ * Class maintains information about the score and offers methods related to it.
+ * @author Daniela
+ */
 public class Score {
-    //oliomuuttujat
+
     private int score;
-    private int scoreX;
-    private int scoreY;
+    private int scoreX = 635;
+    private int scoreY = 30;
     
-    //konstruktorit
     public Score() {
         this.score = 0;
-        this.scoreX = 650;
-        this.scoreY = 30;
     }
     
-    //metodit
+    /**
+     * Method raises total score by 5 points.
+     */
     public void raiseScore() {
         this.score += 5;
     }
     
+    /**
+     * Method resets total score back to zero.
+     */
     public void reset() {
         this.score = 0;
     }

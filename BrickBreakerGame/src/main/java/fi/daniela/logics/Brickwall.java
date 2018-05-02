@@ -5,10 +5,14 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
+/**
+ * Class maintains information about the brickwall and offers methods related to it.
+ * @author Daniela
+ */
 public class Brickwall {
     //oliomuuttujat
-    public int brickWidth;
-    public int brickHeight;
+    private int brickWidth;
+    private int brickHeight;
     private int numberOfBricks;
     private int visible[][];
     
@@ -26,11 +30,21 @@ public class Brickwall {
     }
     
     //metodit
+    /**
+     * Method sets the brick value (1 = visible, 0 = not visible).
+     * @param value 1 = visible, 0 = not visible
+     * @param row row
+     * @param column column
+     */
     public void setBrickValue(int value, int row, int column) {
         visible[row][column] = value;
     }
     
-    public void draw(Graphics2D g) {
+    /**
+     * Method draws the brickwall.
+     * @param g Graphics2D g
+     */
+    public void draw(Graphics2D g) { //KUULUUKO TÄNNE? VAI GAMEPANEL?
         for (int i = 0; i < visible.length; i++) {
             for (int j = 0; j < visible[0].length; j++) {
                 if (visible[i][j] == 1) {
@@ -61,7 +75,7 @@ public class Brickwall {
     public int getNumberOfBricks() {
         return numberOfBricks;
     }
-    
+
     public void setBrickWidth(int brickWidth) {
         this.brickWidth = brickWidth;
     }
@@ -69,9 +83,13 @@ public class Brickwall {
     public void setBrickHeight(int brickHeight) {
         this.brickHeight = brickHeight;
     }
-
+    
     public void setNumberOfBricks(int numberOfBricks) {
         this.numberOfBricks = numberOfBricks;
+    }
+    
+    public int getBrickValue(int row, int column) {
+        return visible[row][column];
     }
     
     

@@ -10,10 +10,10 @@ import static org.junit.Assert.*;
 
 public class BrickwallTest {
     
-    Brickwall bw;
+    Brickwall brickwall;
     
     public BrickwallTest() {
-        this.bw = new Brickwall(4, 8);
+        this.brickwall = new Brickwall(4, 8);
     }
     
     @Before
@@ -21,15 +21,50 @@ public class BrickwallTest {
     }
     
     @Test
+    public void brickwallConstructorTest() {
+        brickwall = new Brickwall(1, 2);
+        assertEquals(270, brickwall.getBrickWidth());
+        assertEquals(150, brickwall.getBrickHeight());
+        assertEquals(2, brickwall.getNumberOfBricks());
+        
+    }
+    
+//    @Test //KESKEN
+//    public void drawTest() {
+//        brickwall.draw();
+//        
+//    }
+    
+    @Test
+    public void getBrickWidthFunctionsCorrectly() {
+        brickwall.setBrickWidth(400);
+        assertEquals(400, brickwall.getBrickWidth());
+    } 
+    
+    @Test
+    public void getBrickHeightFunctionsCorrectly() {
+        brickwall.setBrickHeight(400);
+        assertEquals(400, brickwall.getBrickHeight());
+    }
+    
+    @Test
+    public void getNumberOfBricksFunctionsCorrectly() {
+        brickwall.setNumberOfBricks(12);
+        assertEquals(12, brickwall.getNumberOfBricks());
+    }
+    
+    @Test
+    public void getBrickValueFunctionsCorrectly() {
+        brickwall.setBrickValue(3, 2, 2);
+        assertEquals(3, brickwall.getBrickValue(2, 2));
+    }
+    
+    @Test
     public void setBrickValueFunctionsCorrectly() {
-        assertEquals(1, bw.getVisible()[0][0]);
-        bw.setBrickValue(0, 0, 0);
-        assertEquals(0, bw.getVisible()[0][0]);
+        assertEquals(1, brickwall.getVisible()[0][0]);
+        brickwall.setBrickValue(0, 0, 0);
+        assertEquals(0, brickwall.getVisible()[0][0]);
     }    
-    
-    
-    
-    
     
     @BeforeClass
     public static void setUpClass() {}

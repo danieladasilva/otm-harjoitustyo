@@ -19,7 +19,7 @@ import javax.swing.Timer;
 public class GamePanel extends JPanel implements KeyListener, ActionListener {
     //oliomuuttujat
     private Timer timer;
-    private int delay = 8;        
+    private int delay = 8; 
     
     public Brickwall brickwall;
     public Ball ball;
@@ -73,28 +73,32 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         g.setFont(new Font("sans serif", Font.BOLD, 30));
         g.drawString(Integer.toString(score.getScore()), score.getScoreX(), score.getScoreY());
         
-        //jos pallo osuuu maahan
+        //game over
         if (ball.getBallY() > 570) {
+            Play.setGameOver(true);
             Play.setRunning(false);
             g.setColor(Color.red);
             g.drawString("GAME OVER", 200, 300);
         }
         
-        //jos kaikki tiilet rikottu
+        //you won
         if (brickwall.getNumberOfBricks() <= 0) {
+            Play.setGameOver(true);
             Play.setRunning(false);
             g.setColor(Color.green);
-            g.drawString("YOU WON", 200, 300);
-            g.drawString("Press enter to play again", 200, 300);
+            g.drawString("YOU WON", 270, 250);
+            g.setFont(new Font("sans serif", Font.BOLD, 20));
+            g.drawString("Press enter to play again", 225, 300);
         }
         
         g.dispose();    
     }
     
-    public void restartTheGame() {
+    public void restartTheGame() { //tää pois gamepanelista?????
           brickwall = Play.restartTheGame();
           repaint();
     }
+    
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -107,11 +111,20 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
             paddle.moveLeft();
         } 
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (Play.isRunning() == false) {
+            if (Play.isGameOver()) { //jos peli on loppu
+                if (Play.isRunning() == false) { //ja peli ei oo käynnissä
                 restartTheGame();
-            }
-        }
-
+                }
+            } else { //jos peli ei oo loppu
+                if (Play.isRunning() == false) {
+                    Play.unpause();
+                }
+                if (Play.isRunning() == true) {
+                    Play.pause(); //asettaa running = false
+                }
+                
+            } 
+        }    
     }
     
     @Override
@@ -120,16 +133,6 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         Play.play();
         repaint();
     }
-
-    //getterit ja setterit
-    public Timer getTimer() {
-        return timer;
-    }
- 
-    public void setTimer(Timer timer) {
-        this.timer = timer;
-    }
-    
     
     //turhia?
     @Override

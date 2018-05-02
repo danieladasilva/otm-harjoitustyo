@@ -59,6 +59,18 @@ public class PaddleTest {
 //        assertEquals(true, paddle.getRunning());
 //    }
     
+    @Test
+    public void getPaddleWidthFunctionsCorrectly() {
+        paddle.setPaddleWidth(400);
+        assertEquals(400, paddle.getPaddleWidth());
+    } 
+    
+    @Test
+    public void getPaddleHeightFunctionsCorrectly() {
+        paddle.setPaddleHeight(400);
+        assertEquals(400, paddle.getPaddleHeight());
+    }
+    
     
     @BeforeClass
     public static void setUpClass() {}

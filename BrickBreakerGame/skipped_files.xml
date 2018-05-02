@@ -7,4 +7,5 @@
 <suppressions>
     <suppress files="fi.daniela.main" checks="[a-zA-Z0-9]*"/>
     <suppress files="fi.daniela.gui" checks="[a-zA-Z0-9]*"/>
+    <suppress files="fi.daniela.dao" checks="[a-zA-Z0-9]*"/>
 </suppressions>

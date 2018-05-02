@@ -35,6 +35,18 @@ public class ScoreTest {
         assertEquals(0, score.getScore());
     }
     
+    @Test
+    public void getScoreXFunctionsCorrectly() {
+        score.setScoreX(90);
+        assertEquals(90, score.getScoreX());
+    }
+    
+    @Test
+    public void getScoreYFunctionsCorrectly() {
+        score.setScoreY(90);
+        assertEquals(90, score.getScoreY());
+    }
+    
     @BeforeClass
     public static void setUpClass() {}
     @AfterClass

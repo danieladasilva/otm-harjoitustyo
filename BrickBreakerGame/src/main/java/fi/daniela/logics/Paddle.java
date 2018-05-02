@@ -1,14 +1,17 @@
 
 package fi.daniela.logics;
 
+/**
+ * Class maintains information about the paddle and offers methods related to it.
+ * @author Daniela
+ */
 public class Paddle {
-    //oliomuuttujat
+    
     private int paddleX;
     private int paddleY;
     private int paddleWidth;
     private int paddleHeight;
     
-    //konstruktorit
     public Paddle() {
         this.paddleX = 350;
         this.paddleY = 550;
@@ -16,12 +19,17 @@ public class Paddle {
         this.paddleHeight = 15;
     }
     
-    //metodit
+    /**
+     * Method resets all the changed paddle-values back to starting point.
+     */
     public void resetStartingValues() {
         this.paddleX = 350;
         this.paddleY = 550;
     }
     
+    /**
+     * Method changes paddles position to the right by 20 steps.
+     */
     public void moveRight() {
         //running = true;
         if (this.paddleX + 20 >= 600) {
@@ -31,6 +39,9 @@ public class Paddle {
         }    
     }
     
+    /**
+     * Method changes paddles position to the left by 20 steps.
+     */
     public void moveLeft() {
         //running = true;
         if (this.paddleX - 20 <= 3) {
@@ -39,6 +50,12 @@ public class Paddle {
             this.paddleX -= 20;
         }    
     }
+    
+//    public Rectangle createRectangle() { //RAMI AUTTAA
+//        Rectangle paddleRect = new Rectangle(Play.getPaddle().paddleX, Play.getPaddle().paddleY, Play.getPaddle().paddleWidth, Play.getPaddle().paddleHeight);
+//        //Rectangle paddleRect = new Rectangle(paddle.getPaddleX(), paddle.getPaddleY(), paddle.getPaddleWidth(), paddle.getPaddleHeight());
+//        return paddleRect;
+//    }
     
     //getterit ja setterit
     public int getPaddleX() {
@@ -72,6 +89,5 @@ public class Paddle {
     public void setPaddleHeight(int paddleHeight) {
         this.paddleHeight = paddleHeight;
     }
-    
     
 }
