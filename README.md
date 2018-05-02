@@ -34,7 +34,7 @@ Tiedostoon [checkstylme.xml](https://github.com/danieladasilva/otm-harjoitustyo/
  mvn jxr:jxr checkstyle:checkstyle
 ```
 
-Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedoston _target/site/checkstyle.html_
 
 ### Suoritettavan jarin generointi
 
@@ -54,4 +54,4 @@ JavaDoc generoidaan komennolla
 mvn javadoc:javadoc
 ```
 
-JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
+JavaDocia voi tarkastella avaamalla selaimella tiedoston _target/site/apidocs/index.html_
