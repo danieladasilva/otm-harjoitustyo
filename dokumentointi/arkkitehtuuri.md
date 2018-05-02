@@ -2,6 +2,8 @@
 
 #### Rakenne ####
 
+![pakkauskaavio 2](https://user-images.githubusercontent.com/36673150/39534835-30c6f176-4e3b-11e8-8ab8-927c89b8e9aa.jpg)
+
 Ohjelman rakenne muodostuu neljästä pakkauksesta seuraavasti:
 
 - pakkaus fi.daniela.gui sisältää JavaFX:llä toteutetun graafisen käyttöliittymän
