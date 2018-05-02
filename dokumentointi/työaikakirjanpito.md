@@ -15,4 +15,5 @@ la 21.4. | 11 - 18 | 7 | viikko 5: koodin pakkausrakennetta kuntoon, testejä | 
 su 22.4. | 16 - 20 | 4 | viikko 5: mm. jar-jutut | kotona
 ti 24.4. | 12 - 15, 21 - 22 | 4 | viikko 5: mm. sovelluslogiikkaa erilleen käyttöliittymästä | pajassa, kotona 
 ti 1.5. | 12 - 18 | 6 | viikko 6: lisää koodia, pysyväistallennuksen aloitus | kotona
+ke 2.5. | 10 - 14, 18 - 22 | 8 | viikko 6:  testejä | pajassa
 -- | - | yht. 56 | - | -
