@@ -32,5 +32,5 @@ Sovellus koostuu ainoastaan yhdestä näkymästä, pelinäkymästä. Pelin pää
 
 - peliin erikoispiirteitä:
     - useita eri tasoja
-    - erikoistiilejä (pallon osuessa: pallon nopeus kasvaa, lauta pienenee/suurenee vaikeuttaen/helpottaen pallon kiinniottamista, pallo menee suoraan tiilien läpi jne.) 
+    - erikoistiilejä (pallon osuessa: pallon nopeus kasvaa, lauta pienenee/suurenee vaikeuttaen/helpottaen pallon kiinniottamista, pallo menee suoraan tiilien läpi) 
 
