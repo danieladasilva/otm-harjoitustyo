@@ -1,4 +1,4 @@
-## ALUSTAVA Vaatimusmäärittely ##
+## Vaatimusmäärittely ##
 
 
 #### Sovelluksen tarkoitus ####
