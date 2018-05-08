@@ -9,7 +9,7 @@ Brick Breaker Game (yksinkertainen versio) on peli, jossa pelaajan tarkoituksena
 
 Sovellus sisältää ainoastaan yhden käyttäjätyypin, pelaajan.
 
-#### Käyttöliittymäluonnos ####
+#### Käyttöliittymä ####
 
 Sovellus koostuu ainoastaan yhdestä näkymästä, pelinäkymästä. Pelin päättyessä ilmestyy näkymään ilmoitus voitosta/häviöstä tekstinä. Pelin aloittaminen uudestaan enter-näppäimellä poistaa tekstit ja näyttää jälleen pelkän pelinäkymän.
 
@@ -29,4 +29,8 @@ Sovellus koostuu ainoastaan yhdestä näkymästä, pelinäkymästä. Pelin pää
 
 
 #### Jatkokehitysideoita ##
+
+- peliin erikoispiirteitä:
+    - useita eri tasoja
+    - erikoistiilejä (pallon osuessa: pallon nopeus kasvaa, lauta pienenee/suurenee vaikeuttaen/helpottaen pallon kiinniottamista, pallo menee suoraan tiilien läpi jne.) 
 
