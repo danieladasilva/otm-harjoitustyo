@@ -20,7 +20,7 @@ Brick Breaker Game on peli, jossa pelaajan tarkoituksena on rikkoa tiilistä muo
 
 [viikko 6](https://github.com/danieladasilva/otm-harjoitustyo/releases/tag/Viikko6)
 
-[Viikko 7](https://github.com/danieladasilva/otm-harjoitustyo/releases/tag/viikko7)
+[loppupalautus](https://github.com/danieladasilva/otm-harjoitustyo/releases/tag/viikko7)
 
 ## Komentorivitoiminnot
 
