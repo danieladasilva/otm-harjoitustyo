@@ -15,10 +15,20 @@ Ohjelman pakkausrakenne kaaviona:
 
 #### Käyttöliittymä ####
 
+Käyttöliittymä sisältää yhden näkymän, pelinäkymän. Käyttöliittymä on rakennettu pakkauksen fi.daniela.gui luokkaan GamePanel. Käyttöliittymäluokka on pyritty eristämään toiminnoiltaan kokonaan sovelluslogiikasta vastaavan pakkauksen fi.daniela.logics luokista.
+
 #### Sovelluslogiikka ####
 
 ![luokkakaavio](https://user-images.githubusercontent.com/36673150/39197906-61d66bf0-47ee-11e8-990c-33fbfbeed084.png)
 
 #### Tietojen pysyväistallennus ####
 
+Tietojen pysyväistallennus on toteutettu tietokantaa käyttämällä. Pakkaus fi.daniela.dao huolehtii ohjelman pysyväistallennuksesta. 
+
+Pakkauksen luokat Dao, Database ja ScoreDao noudattavat Data Access Object -suunnittelumallia.
+
+#### Päätoiminnallisuuksia ####
+
 #### Ohjelman rakenteeseen jääneet heikkoudet ####
+
+Käyttöliittymä: Pakkauksen fi.daniela.gui luokka GamePanel jäi rakenteltaan hieman vaikealukuiseksi. Luokka sisältää turhan paljon asioita, ja luokka olisikin ehkä ollut syytä jakaa lyhyempiin ja selkeämpiin luokkiin.
