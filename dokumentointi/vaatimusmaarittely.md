@@ -32,7 +32,9 @@ Sovellus koostuu ainoastaan yhdestä näkymästä, pelinäkymästä. Pelin pää
 
 #### Jatkokehitysideoita ##
 
+- pallon suuntaan vaikuttaminen laudan avulla (tällä hetkellä pallo kimpoaa aina pelikuvana, mikä johtaa siihen, että tiilet rikkoutuvat aina tismalleen samassa järjestyksessä)
 - peliin erikoispiirteitä:
     - useita eri tasoja
-    - erikoistiilejä (pallon osuessa: pallon nopeus kasvaa, lauta pienenee/suurenee vaikeuttaen/helpottaen pallon kiinniottamista, pallo menee suoraan tiilien läpi) 
+    - erikoistiilejä (pallon nopeus kasvaa, lauta pienenee/suurenee vaikeuttaen/helpottaen pallon kiinniottamista, pisteet tuplana hetken aikaa jne.)
+- kirjautumismahdollisuus käyttäjälle
 
