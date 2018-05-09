@@ -1,11 +1,11 @@
 ## Käyttöohje ##
 
-#### Ohjelman lataaminen ####
+#### 1. Ohjelman lataaminen ####
 Lataa tiedosto BrickBreaker.jar
 
-#### Ohjelman käynnistäminen ####
+#### 2. Ohjelman käynnistäminen ####
 
 Ohjelma käynnistetään komennolla 
 ```
-java -jar BrickBreaker.jar
+java -jar BrickBreaker-1.0-SNAPSHOT.jar
 ```
