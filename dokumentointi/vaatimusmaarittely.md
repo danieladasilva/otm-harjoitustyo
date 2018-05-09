@@ -11,7 +11,9 @@ Sovellus sisältää ainoastaan yhden käyttäjätyypin, pelaajan.
 
 #### Käyttöliittymä ####
 
-Sovellus koostuu ainoastaan yhdestä näkymästä, pelinäkymästä. Pelin päättyessä ilmestyy näkymään ilmoitus voitosta/häviöstä tekstinä. Pelin aloittaminen uudestaan enter-näppäimellä poistaa tekstit ja näyttää jälleen pelkän pelinäkymän.
+Sovellus koostuu ainoastaan yhdestä näkymästä, pelinäkymästä. Pelin päättyessä ilmestyy näkymään ilmoitus voitosta/häviöstä tekstinä. Pelin aloittaminen uudestaan enter-näppäimellä poistaa tekstit ja näyttää jälleen pelkän pelinäkymän ilman tekstejä.
+
+<img src="https://user-images.githubusercontent.com/36673150/39839741-deb63b7a-53e5-11e8-8180-592aa02bebe7.jpg" width="400">
 
 #### Toiminnallisuudet ####
 
