@@ -18,15 +18,7 @@ public class Main {
         jframe.setVisible(true);
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        
         Connection connection = DriverManager.getConnection("jdbc:sqlite:score.db");
-        
-        //poistetaan ennen palautusta
-        Statement stmt = connection.createStatement();
-        String sql = "DELETE FROM Score";
-        stmt.executeUpdate(sql);
-        stmt.close();
-        
         connection.close();
         
     }
