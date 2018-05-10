@@ -8,11 +8,13 @@ package fi.daniela.logics;
 public class Score {
 
     private int score;
-    private int scoreX = 635;
-    private int scoreY = 30;
+    private int scoreX;
+    private int scoreY;
     
     public Score() {
         this.score = 0;
+        this.scoreX = 635;
+        this.scoreY = 30;
     }
     
     /**
@@ -29,7 +31,6 @@ public class Score {
         this.score = 0;
     }
     
-    //getterit ja setterit
     public int getScore() {
         return score;
     }
@@ -52,7 +53,5 @@ public class Score {
 
     public void setScoreY(int scoreY) {
         this.scoreY = scoreY;
-    }
-    
-    
+    }       
 }

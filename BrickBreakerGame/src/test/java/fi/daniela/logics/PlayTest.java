@@ -1,18 +1,13 @@
 
 package fi.daniela.logics;
 
-import static fi.daniela.logics.Play.createRectangleAroundTheBrick;
-import java.awt.Rectangle;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 public class PlayTest {
     
-    private Play play;
+    private final Play play;
     
     private static Ball ball;
     private static Paddle paddle;
@@ -27,37 +22,11 @@ public class PlayTest {
     public void setUp() {
     }
     
-//    @Test //EI TOIMI, null pointer exception
-//    public void RestartTheGameResetsValuesCorrectly() {
-//        Play.restartTheGame();
-//        assertEquals(true, Play.isRunning());
-//    }
-    
     @Test
     public void pauseFunctionsCorrectly() {
         Play.pause();
         assertEquals(false, Play.isRunning());
     }
-    
-    @Test
-    public void unpauseFunctionsCorrectly() {
-        Play.unpause();
-        assertEquals(true, Play.isRunning());
-    }
-    
-//    @Test //EI TOIMI, null pointer exception
-//    public void playTest() {
-//        Play.setRunning(true);
-//        Play.play();
-//        assertEquals(351, ball.getBallX());
-//    }
-    
-//    @Test //EI TOIMI TÄMÄKÄÄN, null pointer exception
-//    public void ballIntersectsBrickFunctionsCorrectly() {
-//        Rectangle brickRect = createRectangleAroundTheBrick(2, 2);
-//        Play.ballIntersectsBrick(brickRect, 2, 2);
-//        assertEquals(0, brickwall.getBrickValue(2, 2));
-//    }
     
     @Test
     public void setBallFunctionsCorrectly() {
@@ -94,12 +63,5 @@ public class PlayTest {
         Play.setGameOver(true);
         assertEquals(true, Play.isGameOver());
     }
-    
-    @BeforeClass
-    public static void setUpClass() {}
-    @AfterClass
-    public static void tearDownClass() {}
-    @After
-    public void tearDown() {}
 
 }

@@ -4,32 +4,30 @@ package fi.daniela.logics;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 /**
  * Class maintains information about the brickwall and offers methods related to it.
  * @author Daniela
  */
 public class Brickwall {
-    //oliomuuttujat
-    private int brickWidth;
-    private int brickHeight;
+    private static int brickWidth;
+    private static int brickHeight;
     private int numberOfBricks;
-    private int visible[][];
+    private final int visible[][];
     
-    //konstruktorit
     public Brickwall(int rows, int columns) {
         visible = new int[rows][columns];
-        for (int i = 0; i < visible.length; i++) { //rivien määrä
-            for (int j = 0; j < visible[0].length; j++) { //sarakkeiden määrä
-                visible[i][j] = 1; //kun arvo on 1, niin tiili näkyvissä
+        for (int[] visible1 : visible) {
+            for (int j = 0; j < visible[0].length; j++) {
+                visible1[j] = 1;
             }
         }    
-        this.brickWidth = 540 / columns;
-        this.brickHeight = 150 / rows;
+        Brickwall.brickWidth = 540 / columns;
+        Brickwall.brickHeight = 150 / rows;
         this.numberOfBricks = rows * columns;
     }
     
-    //metodit
     /**
      * Method sets the brick value (1 = visible, 0 = not visible).
      * @param value 1 = visible, 0 = not visible
@@ -44,22 +42,36 @@ public class Brickwall {
      * Method draws the brickwall.
      * @param g Graphics2D g
      */
-    public void draw(Graphics2D g) { //KUULUUKO TÄNNE? VAI GAMEPANEL?
+    public void draw(Graphics2D g) {
         for (int i = 0; i < visible.length; i++) {
             for (int j = 0; j < visible[0].length; j++) {
                 if (visible[i][j] == 1) {
-                    g.setColor(Color.cyan); //tiilien väri
+                    g.setColor(Color.cyan);
                     g.fillRect(j * brickWidth + 80, i * brickHeight + 50, brickWidth, brickHeight);
                     
-                    g.setStroke(new BasicStroke(1)); //välien paksuus
-                    g.setColor(Color.black); //välien väri
+                    g.setStroke(new BasicStroke(1));
+                    g.setColor(Color.black);
                     g.drawRect(j * brickWidth + 80, i * brickHeight + 50, brickWidth, brickHeight);
                 }
             }
         }    
     }
     
-    //getterit ja setterit
+    /**
+     * Method creates a rectangle around a brick/brickwall.
+     * @param i row (visible[][])
+     * @param j column (visible[][])
+     * @return rectangle created around a brick/brickwall
+     */
+    public static Rectangle createRectangle(int i, int j) {
+        int brickX = j * Brickwall.brickWidth + 80;
+        int brickY = i * Brickwall.brickHeight + 50;
+        int width = Brickwall.brickWidth;
+        int height = Brickwall.brickHeight;
+        Rectangle brickRect = new Rectangle(brickX, brickY, width, height);
+        return brickRect;
+    }
+    
     public int getBrickWidth() {
         return brickWidth;
     }
@@ -77,11 +89,11 @@ public class Brickwall {
     }
 
     public void setBrickWidth(int brickWidth) {
-        this.brickWidth = brickWidth;
+        Brickwall.brickWidth = brickWidth;
     }
 
     public void setBrickHeight(int brickHeight) {
-        this.brickHeight = brickHeight;
+        Brickwall.brickHeight = brickHeight;
     }
     
     public void setNumberOfBricks(int numberOfBricks) {
@@ -90,12 +102,5 @@ public class Brickwall {
     
     public int getBrickValue(int row, int column) {
         return visible[row][column];
-    }
-    
-    
-    
-        
-    
-        
-    
+    }  
 }

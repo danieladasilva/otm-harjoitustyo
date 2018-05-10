@@ -1,12 +1,9 @@
 
 package fi.daniela.logics;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 public class ScoreTest {
     
@@ -47,12 +44,4 @@ public class ScoreTest {
         assertEquals(90, score.getScoreY());
     }
     
-    @BeforeClass
-    public static void setUpClass() {}
-    @AfterClass
-    public static void tearDownClass() {}
-    @After
-    public void tearDown() {}
-
-
 }

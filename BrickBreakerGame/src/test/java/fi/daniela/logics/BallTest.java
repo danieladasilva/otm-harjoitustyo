@@ -2,10 +2,7 @@
 package fi.daniela.logics;
 
 import java.awt.Rectangle;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -43,7 +40,7 @@ public class BallTest {
     }
     
     @Test
-    public void testi() {
+    public void createRectangleFunctionsCorrectly() {
         Rectangle ballRect1 = new Rectangle(ball.getBallX(), ball.getBallY(), ball.getBallDiameter(), ball.getBallDiameter());
         Rectangle ballRect2 = ball.createRectangle();
         assertEquals(ballRect1, ballRect2);
@@ -84,13 +81,6 @@ public class BallTest {
         }   
     }
     
-//    @Test //TÄMÄ ON KESKEN!!!!
-//    public void checkForPaddleFunctionsCorrectly() {
-//        ball.setBallX(360);
-//        ball.checkForPaddle();
-//        assertEquals(-2, ball.getBallYdir());
-//    }
-    
     @Test
     public void resetStartingValuesFunctionsCorrectly() {
         ball.setBallX(22);
@@ -103,14 +93,5 @@ public class BallTest {
         assertEquals(1, ball.getBallXdir());
         assertEquals(-2, ball.getBallYdir());
     }
-    
-    
-    
-    @BeforeClass
-    public static void setUpClass() {}
-    @AfterClass
-    public static void tearDownClass() {}
-    @After
-    public void tearDown() {}
 
 }

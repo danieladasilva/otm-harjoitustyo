@@ -1,6 +1,7 @@
 
 package fi.daniela.logics;
 
+import static fi.daniela.logics.Play.ballIntersectsBrick;
 import java.awt.Rectangle;
 
 /**
@@ -8,16 +9,13 @@ import java.awt.Rectangle;
  * @author Daniela
  */
 public class Ball {
-
     private int ballX;
     private int ballY;
     private int ballXdir;
     private int ballYdir;
-    private int ballDiameter;
+    private final int ballDiameter;
     
-    public static Paddle paddle; //NÄÄ PRIVATEIKS?
-    public static Brickwall brickwall;
-    public static Score score;
+    private static Paddle paddle; 
     
     public Ball() {
         this.ballX = 350; 
@@ -37,22 +35,21 @@ public class Ball {
     }
     
     /**
-     * Method changes ball x-coordinate direction.
+     * Method changes the ball's x-coordinate's direction.
      */
     public void changeDirectionX() {
         this.ballXdir = -ballXdir;
     }
     
-    
     /**
-     * Method changes ball y-coordinate direction.
+     * Method changes  the ball's y-coordinate's direction.
      */
     public void changeDirectionY() {
         this.ballYdir = -ballYdir;
     }
     
     /**
-     * Method creates a rectangle around the ball and returns it. 
+     * Method creates a rectangle around the ball. 
      * @return rectangle created around the ball
      */
     public Rectangle createRectangle() {
@@ -61,30 +58,47 @@ public class Ball {
     }
     
     /**
-     * Method checks if ball intersects with the borders.
+     * Method checks if the ball intersects with the borders.
      */
     public void checkForBorders() {
-        if (this.ballX < 3) { //left border
+        if (this.ballX < 3) {
             changeDirectionX();
         }
-        if (this.ballX > 690 - this.ballDiameter) { //right border 675 = 690 - 15
+        if (this.ballX > 690 - this.ballDiameter) {
             changeDirectionX(); 
         }
-        if (this.ballY < 3) { //top border
+        if (this.ballY < 3) {
             changeDirectionY();
         }
     }
     
     /**
-     * Method checks if ball intersects with the paddle.
+     * Method checks if the ball intersects with the paddle.
      */
-    public void checkForPaddle() { //RAMI AUTTAA? MITEN PADDLEN RECTANGLE LUODAAN PADDLEM OMASSA LUOKASSA
+    public void checkForPaddle() { 
         Rectangle ballRect = createRectangle();
-        //Rectangle paddleRect = createRectangle();
-        Rectangle paddleRect = new Rectangle(paddle.getPaddleX(), paddle.getPaddleY(), paddle.getPaddleWidth(), paddle.getPaddleHeight());
+        Rectangle paddleRect = paddle.createRectangle();
         if (ballRect.intersects(paddleRect)) {
             changeDirectionY();
         }
+    }
+    
+    public void checkForBricks() {
+        outerloop:
+            for (int i = 0; i < Play.getBrickwall().getVisible().length; i++) {
+                for (int j = 0; j < Play.getBrickwall().getVisible()[0].length; j++) {
+                    if (Play.getBrickwall().getVisible()[i][j] == 1) {
+                       
+                        Rectangle ballRect = createRectangle();
+                        Rectangle brickRect = Brickwall.createRectangle(i, j);
+                        
+                        if (ballRect.intersects(brickRect)) {
+                            ballIntersectsBrick(brickRect, i, j);
+                            break outerloop;
+                        }
+                    }
+                }
+            }
     }
     
     /**
@@ -134,17 +148,7 @@ public class Ball {
         this.ballYdir = ballYdir;
     }
 
-
-
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
+    public static void setPaddle(Paddle paddle) {
+        Ball.paddle = paddle;
+    }   
 }

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class Database {
     
-    private String databaseAddress;
+    private final String databaseAddress;
 
     public Database(String databaseAddress) throws ClassNotFoundException {
         this.databaseAddress = databaseAddress;
@@ -15,7 +15,6 @@ public class Database {
 
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(databaseAddress);
-        //databaseAddress??
     }
     
 }

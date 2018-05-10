@@ -1,7 +1,13 @@
 
 package fi.daniela.logics;
 
+import fi.daniela.dao.Database;
+import fi.daniela.dao.ScoreDao;
+import fi.daniela.main.Main;
 import java.awt.Rectangle;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Class maintains information about the game play and offers methods related to it.
@@ -15,10 +21,22 @@ public class Play {
     private static Score score;
     
     private static boolean running = false;
-    private static boolean gameOver;
+    private static boolean gameOver = false;
     
     /**
-     * Method to restart the game. Resets all changed values back to starting point.
+     * Method activates the game if the variable 'running' equals true.
+     */
+    public static void play() {
+        if (running) {
+            ball.checkForPaddle();
+            ball.checkForBricks();               
+            ball.checkForBorders();
+            ball.move();
+        }
+    }
+    
+    /**
+     * Method restarts the game and all of its changed values back to starting point.
      * @return new brickwall
      */
     public static Brickwall restartTheGame() {
@@ -43,43 +61,38 @@ public class Play {
      */
     public static void unpause() {
         running = true;
-        //play();  ei toimi testien kanssa?? null pointer exception 
-    }
- 
-    /**
-     * Method activates the game if its running.
-     */
-    public static void play() {
-        if (running) {
-
-            ball.checkForPaddle(); //tarkista osuminen lautaan
-            //ball.checkForBricks();
-            //osuminen tiileihin
-            outerloop:
-            for (int i = 0; i < brickwall.getVisible().length; i++) {
-                for (int j = 0; j < brickwall.getVisible()[0].length; j++) {
-                    if (brickwall.getVisible()[i][j] == 1) { //jos tiili on näkyvissä
-                       
-                        Rectangle ballRect = ball.createRectangle();
-                        Rectangle brickRect = createRectangleAroundTheBrick(i, j);
-                        
-                        if (ballRect.intersects(brickRect)) {
-                            ballIntersectsBrick(brickRect, i, j);
-                            break outerloop;
-                        }
-                    }
-                }
-            }                
-            ball.move(); //liikuta palloa
-            ball.checkForBorders(); //tarkista osuminen reunoihin
-        }
+        play();
     }
     
     /**
-     * METHOD UNFINISHED!!
-     * @param brickRect
-     * @param i
-     * @param j 
+     * Method updates highscore in the database score.db
+     */
+    public static void updateHighscore() {
+        try {
+            Database scoredb = new Database("jdbc:sqlite:score.db");
+            ScoreDao scoreDao = new ScoreDao(scoredb);
+            scoreDao.save(score);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
+    
+    /**
+     * Method finds the highscore from the database score.db
+     * @return highscore
+     * @throws Exception 
+     */
+    public static int getHighscore() throws Exception {
+        Database scoredb = new Database("jdbc:sqlite:score.db");
+        ScoreDao scoreDao = new ScoreDao(scoredb);
+        return scoreDao.maxScore();
+    }
+    
+    /**
+     * Method for when ball intersects with a brick (raises score, sets brick invisible etc.)
+     * @param brickRect rectangle created around the brick
+     * @param i row
+     * @param j column
      */
     public static void ballIntersectsBrick(Rectangle brickRect, int i, int j) {
         brickwall.setBrickValue(0, i, j);
@@ -92,25 +105,6 @@ public class Play {
         }
     }
     
-    /**
-     * Method creates a rectangle around a brick/brickwall.
-     * @param i row (visible[][])
-     * @param j column (visible[][])
-     * @return rectangle created around a brick/brickwall
-     */
-    public static Rectangle createRectangleAroundTheBrick(int i, int j) {
-        int brickX = j * brickwall.getBrickWidth() + 80;
-        int brickY = i * brickwall.getBrickHeight() + 50;
-        int brickWidth = brickwall.getBrickWidth();
-        int brickHeight = brickwall.getBrickHeight();
-                        
-        Rectangle brickRect = new Rectangle(brickX, brickY, brickWidth, brickHeight);
-        
-        return brickRect;
-        
-    }
-    
-    //getters and setters
     public static Ball getBall() {
         return ball;
     }
@@ -126,26 +120,7 @@ public class Play {
     public static Brickwall getBrickwall() {
         return brickwall;
     }
-
-    public static void setBall(Ball ball) {
-        Play.ball = ball;
-    }
-
-    public static void setPaddle(Paddle paddle) {
-        Play.paddle = paddle;
-        Ball.paddle = paddle;
-    }
-
-    public static void setScore(Score score) {
-        Play.score = score;
-        Ball.score = score;
-    }
-
-    public static void setBrickwall(Brickwall brickwall) {
-        Play.brickwall = brickwall;
-        Ball.brickwall = brickwall;
-    }
-
+    
     public static boolean isRunning() {
         return running;
     }
@@ -154,14 +129,28 @@ public class Play {
         return gameOver;
     }
 
+    public static void setBall(Ball ball) {
+        Play.ball = ball;
+    }
+
+    public static void setPaddle(Paddle paddle) {
+        Play.paddle = paddle;
+        Ball.setPaddle(paddle);
+    }
+
+    public static void setScore(Score score) {
+        Play.score = score;
+    }
+
+    public static void setBrickwall(Brickwall brickwall) {
+        Play.brickwall = brickwall;
+    }
+    
     public static void setRunning(boolean running) {
         Play.running = running;
     }
 
     public static void setGameOver(boolean gameOver) {
         Play.gameOver = gameOver;
-    }
-    
-    
-    
+    }   
 }

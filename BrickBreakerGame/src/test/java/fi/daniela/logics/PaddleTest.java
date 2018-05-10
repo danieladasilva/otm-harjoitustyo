@@ -1,16 +1,14 @@
 
 package fi.daniela.logics;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import java.awt.Rectangle;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 public class PaddleTest {
     
-    private Paddle paddle;
+    private final Paddle paddle;
     
     public PaddleTest() {
         this.paddle = new Paddle();
@@ -47,17 +45,12 @@ public class PaddleTest {
         assertEquals(550, paddle.getPaddleY());
     }
     
-//    @Test
-//    public void moveRightRunningValueChanges() {
-//        paddle.moveRight();
-//        assertEquals(true, paddle.getRunning());
-//    }
-//    
-//    @Test
-//    public void moveLeftRunningValueChanges() {
-//        paddle.moveLeft();
-//        assertEquals(true, paddle.getRunning());
-//    }
+    @Test
+    public void createRectangleFunctionsCorrectly() {
+        Rectangle paddleRect1 = new Rectangle(paddle.getPaddleX(), paddle.getPaddleY(), paddle.getPaddleWidth(), paddle.getPaddleHeight());
+        Rectangle paddleRect2 = paddle.createRectangle();
+        assertEquals(paddleRect1, paddleRect2);
+    }
     
     @Test
     public void getPaddleWidthFunctionsCorrectly() {
@@ -70,13 +63,5 @@ public class PaddleTest {
         paddle.setPaddleHeight(400);
         assertEquals(400, paddle.getPaddleHeight());
     }
-    
-    
-    @BeforeClass
-    public static void setUpClass() {}
-    @AfterClass
-    public static void tearDownClass() {}
-    @After
-    public void tearDown() {}
 
 }

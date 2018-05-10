@@ -1,12 +1,14 @@
 package fi.daniela.main;
 
 import fi.daniela.gui.GamePanel;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import javax.swing.JFrame;
 
 public class Main {
     
-    public static void main(String[] args) {
-        //käyttöliittymä
+    public static void main(String[] args) throws Exception {
         JFrame jframe = new JFrame();
         GamePanel gamePanel = new GamePanel();
         jframe.add(gamePanel);
@@ -16,6 +18,16 @@ public class Main {
         jframe.setVisible(true);
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
+        
+        Connection connection = DriverManager.getConnection("jdbc:sqlite:score.db");
+        
+        //poistetaan ennen palautusta
+        Statement stmt = connection.createStatement();
+        String sql = "DELETE FROM Score";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        
+        connection.close();
+        
     }
-    
 }

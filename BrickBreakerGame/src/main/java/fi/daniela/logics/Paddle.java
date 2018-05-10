@@ -1,6 +1,8 @@
 
 package fi.daniela.logics;
 
+import java.awt.Rectangle;
+
 /**
  * Class maintains information about the paddle and offers methods related to it.
  * @author Daniela
@@ -31,7 +33,6 @@ public class Paddle {
      * Method changes paddles position to the right by 20 steps.
      */
     public void moveRight() {
-        //running = true;
         if (this.paddleX + 20 >= 600) {
             this.paddleX = 600;
         } else {
@@ -43,7 +44,6 @@ public class Paddle {
      * Method changes paddles position to the left by 20 steps.
      */
     public void moveLeft() {
-        //running = true;
         if (this.paddleX - 20 <= 3) {
             this.paddleX = 3; 
         } else {
@@ -51,13 +51,15 @@ public class Paddle {
         }    
     }
     
-//    public Rectangle createRectangle() { //RAMI AUTTAA
-//        Rectangle paddleRect = new Rectangle(Play.getPaddle().paddleX, Play.getPaddle().paddleY, Play.getPaddle().paddleWidth, Play.getPaddle().paddleHeight);
-//        //Rectangle paddleRect = new Rectangle(paddle.getPaddleX(), paddle.getPaddleY(), paddle.getPaddleWidth(), paddle.getPaddleHeight());
-//        return paddleRect;
-//    }
+    /**
+     * Method creates a rectangle around the paddle.
+     * @return created rectangle 
+     */
+    public Rectangle createRectangle() {
+        Rectangle paddleRect = new Rectangle(this.paddleX, this.paddleY, this.paddleWidth, this.paddleHeight);
+        return paddleRect;
+    }
     
-    //getterit ja setterit
     public int getPaddleX() {
         return paddleX;
     }
@@ -88,6 +90,5 @@ public class Paddle {
 
     public void setPaddleHeight(int paddleHeight) {
         this.paddleHeight = paddleHeight;
-    }
-    
+    }   
 }

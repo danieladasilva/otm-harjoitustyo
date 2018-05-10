@@ -1,12 +1,10 @@
 
 package fi.daniela.logics;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import java.awt.Rectangle;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 public class BrickwallTest {
     
@@ -28,12 +26,6 @@ public class BrickwallTest {
         assertEquals(2, brickwall.getNumberOfBricks());
         
     }
-    
-//    @Test //KESKEN
-//    public void drawTest() {
-//        brickwall.draw();
-//        
-//    }
     
     @Test
     public void getBrickWidthFunctionsCorrectly() {
@@ -64,13 +56,18 @@ public class BrickwallTest {
         assertEquals(1, brickwall.getVisible()[0][0]);
         brickwall.setBrickValue(0, 0, 0);
         assertEquals(0, brickwall.getVisible()[0][0]);
-    }    
-    
-    @BeforeClass
-    public static void setUpClass() {}
-    @AfterClass
-    public static void tearDownClass() {}
-    @After
-    public void tearDown() {}
+    }
 
+    @Test
+    public void createRectangleFunctionsCorrectly() {
+        int brickX = 2 * brickwall.getBrickWidth() + 80;
+        int brickY = 2 * brickwall.getBrickHeight() + 50;
+        int brickWidth = brickwall.getBrickWidth();
+        int brickHeight = brickwall.getBrickHeight();
+                        
+        Rectangle brickRect1 = new Rectangle(brickX, brickY, brickWidth, brickHeight);
+        Rectangle brickRect2 = Brickwall.createRectangle(2, 2);
+        assertEquals(brickRect1, brickRect2);
+    }
+    
 }
